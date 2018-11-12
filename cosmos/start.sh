@@ -22,7 +22,10 @@ if [ "$ROLE_SENTRY" == "$ROLE" ]; then
   MONIKER="wancloud-sentry"
 fi
 
-gaiad init --home /data/.gaiad --home-client /data/.gaiacli --chain-id gaia-9000 --moniker $MONIKER
+if [ ! -f "/data/.gaiad/config/genesis.json" ]; then
+  echo "The genesis file does not exist"
+  gaiad init --home-client /data/.gaiacli --chain-id gaia-9000 --moniker $MONIKER
+fi
 
-nohup gaiad start --home /data/.gaiad 2>&1 > /data/gaia.log &
+nohup gaiad start > /data/gaia.log 2>&1 &
 
