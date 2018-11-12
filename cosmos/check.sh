@@ -1,10 +1,7 @@
 #!/bin/bash
 
 FLAG=`ps -ef | grep gaiad | wc -l`
-if [ $FLAG -ne 1 ]; then
-  PID=$(ps x | grep gaiad | grep -v grep | awk '{print $1}')
-  echo "Kill gaia PID: "$PID
-  kill $PID
+if [ $FLAG -ne 2 ]; then
+  source start.sh
+  echo "Gaiad restarted successfully."
 fi
-
-source start.sh

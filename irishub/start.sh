@@ -15,16 +15,13 @@ if [[ "$ROLE_VAL" != "$ROLE" ]] && [[ "$ROLE_SENTRY" != "$ROLE" ]]; then
 fi 
 
 cd ~
-chmod +x gaia*
+chmod +x iris*
 
 MONIKER="wancloud"
 if [ "$ROLE_SENTRY" == "$ROLE" ]; then
   MONIKER="wancloud-sentry"
 fi
 
-if [ ! -f "/data/.gaiad/config/genesis.json" ]; then
-  echo "The genesis file does not exist"
-  gaiad init --home /data/.gaiad --home-client /data/.gaiacli --chain-id gaia-9000 --moniker $MONIKER
-fi
+iris init --home-client /data/.iriscli --name afu --chain-id fuxi-3001
 
-nohup gaiad start --home /data/.gaiad > /data/gaia.log 2>&1 &
+nohup iris start > /data/iris.log 2>&1 &

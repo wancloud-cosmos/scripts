@@ -7,4 +7,10 @@ if [ $FLAG -ne 1 ]; then
   kill $PID
 fi
 
-source start.sh
+source start.sh > /tmp/error
+if [ $? -ne 0 ];then
+  echo "Gaiad failed to restart."
+  exit 1
+fi
+
+echo "Gaiad restarted successfully."
