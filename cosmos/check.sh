@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "Check gaiad process."
+
 FLAG=`ps -ef | grep gaiad | wc -l`
 if [ $FLAG -ne 2 ]; then
-  source start.sh
-  echo "Gaiad restarted successfully."
+  nohup gaiad start --home /data/.gaiad > /data/gaia.log 2>&1 &
+  echo "Gaiad checked failure and restarted successfully."
 fi

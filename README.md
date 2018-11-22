@@ -1,35 +1,58 @@
 # scripts
 
 @build server
+
 1、Install dep:
 
 `
-go get -u github.com/golang/dep
-go build
+go get -u github.com/golang/dep ...
 `
 
 2、Install statik:
 
 `
-go get -u github.com/rakyll/statik
-go build
+go get -u github.com/rakyll/statik ...
 `
 
 Then append $GOPATH/bin to $PATH or move 'dep' & 'statik' commands to /usr/local/bin
 
+3、Run
 
+`
+cd ~
+`
+
+`
+git clone https://github.com/wancloud-cosmos/scripts.git
+`
+
+`
+./scripts/cosmos/auto_push.sh
+`
 
 
 @execution server
 
-First step:
+1、Set environment variables
 
-Copy gaiad & gaiacli to path: /usr/local/bin
+`
+alias gaiad='gaiad --home /data/.gaiad/
+`
 
-Second step:
+`
+alias gaiacli='gaiacli --home /data/.gaiacli/
+`
 
-(Set environment variables)
+2、Run
 
-alias gaiad='gaiad --home /data/.gaiad/'
+`
+cd ~
+`
 
-alias gaiacli='gaiacli --home /data/.gaiacli/'
+`
+git clone https://github.com/wancloud-cosmos/scripts.git
+`
+
+`
+./scripts/cosmos/start_validator.sh
+`
