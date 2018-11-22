@@ -46,12 +46,13 @@ if [ $? -ne 0 ];then
   exit 1
 fi
 
-#make update_tools &&  make install
+#make update_tools && make get_vendor_deps && make install
 
 GAIAD=$GAIAD_PATH"/gaiad"
 GAIACLI=$GAIACLI_PATH"/gaiacli"
 echo "源文件:$GAIAD,$GAIACLI"
-TARGET_HOSTS=('gos-validator' 'gos-sentry1' 'gos-sentry2')
+#TARGET_HOSTS=('gos-validator' 'gos-sentry1' 'gos-sentry2')
+TARGET_HOSTS=('uc' 'gos-sentry1' 'gos-sentry2')
 for HOST in ${TARGET_HOSTS[@]}
 do
   echo "目标服务器:$HOST"
