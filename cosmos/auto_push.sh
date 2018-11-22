@@ -30,29 +30,21 @@ if [ ! -d $SDK_PATH ]; then
   git checkout $VERSION
 else
   cd cosmos-sdk
-  git fetch --all && git checkout $VERSION 
+  git fetch --all && git checkout $VERSION
+  git pull
 fi
 
-GAIAD_PATH=$SDK_PATH"/cmd/gaia/cmd/gaiad"
-GAIACLI_PATH=$SDK_PATH"/cmd/gaia/cmd/gaiacli"
-cd $GAIAD_PATH
-go build > /tmp/error
-if [ $? -ne 0 ];then
-  exit 1
-fi
-cd $GAIACLI_PATH
-go build > /tmp/error
-if [ $? -ne 0 ];then
-  exit 1
-fi
+make get_tools && make update_tools
+make get_vendor_deps
+make install
 
-#make update_tools && make get_vendor_deps && make install
-
-GAIAD=$GAIAD_PATH"/gaiad"
-GAIACLI=$GAIACLI_PATH"/gaiacli"
+GAIAD=$GOPATH"/bin/gaiad"
+GAIACLI=$GOPATH"/bin/gaiacli"
 echo "源文件:$GAIAD,$GAIACLI"
+
 #TARGET_HOSTS=('gos-validator' 'gos-sentry1' 'gos-sentry2')
 TARGET_HOSTS=('uc' 'gos-sentry1' 'gos-sentry2')
+
 for HOST in ${TARGET_HOSTS[@]}
 do
   echo "目标服务器:$HOST"
