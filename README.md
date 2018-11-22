@@ -1,13 +1,26 @@
 # scripts
 
-Install dep:
+@build server
+1、Install dep:
 
-go get github.com/golang/dep
+`
+go get -u github.com/golang/dep
 go build
+`
 
-Then move 'dep' to /usr/local/bin
+2、Install statik:
 
-- - - - - - - - - - - - - - - - - - - -
+`
+go get -u github.com/rakyll/statik
+go build
+`
+
+Then set $GOPATH/bin in $PATH or move 'dep' & 'statik' to /usr/local/bin
+
+
+
+
+@execution server
 
 First step:
 
