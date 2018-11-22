@@ -15,7 +15,7 @@ go get -u github.com/rakyll/statik
 go build
 `
 
-Then set $GOPATH/bin in $PATH or move 'dep' & 'statik' to /usr/local/bin
+Then append $GOPATH/bin to $PATH or move 'dep' & 'statik' commands to /usr/local/bin
 
 
 

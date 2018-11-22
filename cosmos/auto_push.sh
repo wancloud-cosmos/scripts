@@ -36,7 +36,10 @@ fi
 
 make get_tools && make update_tools
 make get_vendor_deps
-make install
+make install > /tmp/error
+if [ $? -ne 0 ];then
+  exit 1
+fi
 
 GAIAD=$GOPATH"/bin/gaiad"
 GAIACLI=$GOPATH"/bin/gaiacli"
