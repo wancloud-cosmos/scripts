@@ -25,4 +25,4 @@ if [ ! -f $GAIAD_HOME"/config/genesis.json" ]; then
 fi
 
 echo "gaiad start启动哨兵节点"
-nohup gaiad start --home=$GAIAD_HOME > /data/gaia.log 2>&1 &
+nohup gaiad start --home=$GAIAD_HOME > /data/gaiad.log 2>&1 &

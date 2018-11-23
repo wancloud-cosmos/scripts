@@ -2,7 +2,7 @@
 
 echo "Check gaiad process."
 
-FLAG=`ps -ef | grep gaiad | wc -l`
+FLAG=`ps -ef | grep "gaiad start" | wc -l`
 if [ $FLAG -ne 2 ]; then
   su ubuntu
   cd ~

@@ -14,7 +14,7 @@ if [[ "$ROLE_VAL" != "$ROLE" ]] && [[ "$ROLE_SENTRY" != "$ROLE" ]]; then
   exit 1
 fi
 
-FLAG=`ps -ef | grep gaiad | wc -l`
+FLAG=`ps -ef | grep "gaiad start" | wc -l`
 if [ $FLAG -ne 1 ]; then
   PID=$(ps x | grep gaiad | grep -v grep | awk '{print $1}')
   echo "Kill gaia PID: "$PID
