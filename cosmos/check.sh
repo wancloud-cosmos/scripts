@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd ~
-source .profile
-
 echo "Check gaiad process."
 
 FLAG=`ps -ef | grep gaiad | wc -l`

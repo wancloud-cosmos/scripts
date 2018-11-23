@@ -33,7 +33,7 @@ git clone https://github.com/wancloud-cosmos/scripts.git
 
 @execution server
 
-1、Set environment variables
+1、Set environment variables in ~/.profile
 
 `
 alias gaiad='gaiad --home /data/.gaiad/
