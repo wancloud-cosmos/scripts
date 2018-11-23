@@ -21,6 +21,7 @@ if [ $FLAG -ne 1 ]; then
   kill $PID
 fi
 
+cd `dirname $0`
 if [ "$ROLE_VAL" == "$ROLE" ]; then
   source start_validator.sh > /tmp/error
 else
