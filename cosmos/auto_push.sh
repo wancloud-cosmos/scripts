@@ -51,6 +51,6 @@ TARGET_HOSTS=('uc' 'gos-sentry1' 'gos-sentry2')
 for HOST in ${TARGET_HOSTS[@]}
 do
   echo "目标服务器:$HOST"
-  scp $GAIAD ubuntu@$HOST:/home/ubuntu/
-  scp $GAIACLI ubuntu@$HOST:/home/ubuntu/
+  scp $GAIAD ubuntu@$HOST:/home/ubuntu/bin/
+  scp $GAIACLI ubuntu@$HOST:/home/ubuntu/bin/
 done

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ~
 source .profile
 
 echo "Check gaiad process."
