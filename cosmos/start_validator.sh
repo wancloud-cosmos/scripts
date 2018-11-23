@@ -4,8 +4,9 @@ source .profile
 
 CHAIN_ID=$1
 
+cd $HOME/bin
+chmod +x *
 cd ~
-chmod +x gaia*
 
 GAIAD_HOME=/data/.gaiad
 GAIACLI_HOME=/data/.gaiacli
