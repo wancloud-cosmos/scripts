@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source .profile
+
 CHAIN_ID=$1
 
 cd ~

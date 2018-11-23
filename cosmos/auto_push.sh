@@ -37,7 +37,7 @@ fi
 make get_tools && make update_tools
 make get_vendor_deps
 make install > /tmp/error
-if [ $? -ne 0 ];then
+if [ $? -ne 0 ]; then
   exit 1
 fi
 

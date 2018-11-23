@@ -27,7 +27,7 @@ if [ "$ROLE_VAL" == "$ROLE" ]; then
 else
   source start_sentry.sh > /tmp/error
 fi
-if [ $? -ne 0 ];then
+if [ $? -ne 0 ]; then
   echo "Gaiad failed to restart."
   exit 1
 fi
