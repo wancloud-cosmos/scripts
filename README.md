@@ -53,6 +53,31 @@ cd ~
 git clone https://github.com/wancloud-cosmos/scripts.git
 `
 
+(validator node)
+
 `
-./scripts/cosmos/start_validator.sh
+./scripts/cosmos/start_validator.sh gaia-9001
+`
+
+`
+./scripts/cosmos/restart.sh validator
+`
+
+(sentry node)
+
+`
+./scripts/cosmos/start_sentry.sh gaia-9001
+`
+
+`
+./scripts/cosmos/restart.sh sentry
+`
+
+
+@cron
+
+'crontab -e' then edit:
+
+`
+*/1 * * * * ~/scripts/cosmos/check.sh >> /data/cron.log
 `

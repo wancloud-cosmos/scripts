@@ -5,12 +5,12 @@ ROLE_VAL="validator"
 ROLE_SENTRY="sentry"
 
 if [ ! -n "$ROLE" ]; then
-  echo "参数缺失："$ROLE_VAL" 或者 "$ROLE_SENTRY
+  echo "Parameter missing: "$ROLE_VAL" or "$ROLE_SENTRY
   exit 1
 fi
 
 if [[ "$ROLE_VAL" != "$ROLE" ]] && [[ "$ROLE_SENTRY" != "$ROLE" ]]; then
-  echo "必须是有效的参数："$ROLE_VAL" 或者 "$ROLE_SENTRY
+  echo "Must be a valid argument: "$ROLE_VAL" or "$ROLE_SENTRY
   exit 1
 fi
 
