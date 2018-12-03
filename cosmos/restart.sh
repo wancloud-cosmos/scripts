@@ -16,8 +16,8 @@ fi
 
 FLAG=`ps -ef | grep "gaiad start" | wc -l`
 if [ $FLAG -ne 1 ]; then
-  PID=$(ps x | grep gaiad | grep -v grep | awk '{print $1}')
-  echo "Kill gaia PID: "$PID
+  PID=$(ps x | grep "gaiad start" | grep -v grep | awk '{print $1}')
+  echo "Kill the gaia PID: "$PID
   kill $PID
 fi
 
