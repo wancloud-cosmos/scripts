@@ -46,8 +46,8 @@ GAIAD=$GOPATH"/bin/gaiad"
 GAIACLI=$GOPATH"/bin/gaiacli"
 echo "Source file: "$IRISD", "$IRISCLI
 
-#TARGET_HOSTS=('gos-validator' 'gos-sentry1' 'gos-sentry2')
-TARGET_HOSTS=('uc' 'gos-sentry1' 'gos-sentry2')
+TARGET_HOSTS=('gos-validator' 'gos-sentry1' 'gos-sentry2')
+#TARGET_HOSTS=('uc' 'gos-sentry1' 'gos-sentry2')
 
 for HOST in ${TARGET_HOSTS[@]}
 do
